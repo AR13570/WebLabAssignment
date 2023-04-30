@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+   
+</head>
+<body>
+    <h1>Color Changing Text!</h1>
+    <button id = "green">Make text green</button>
+    <button id = "blue">Make text blue</button>
+    <button id = "orig">Revert to original Colour</button>
+    <script>
+        function changeColor(color){
+            return function(){
+                document.body.style.color=color;
+            };
+        }
+        var greenf=changeColor('green')
+        var bluef=changeColor('blue')
+        var origf = changeColor('black')
+        document.getElementById('green').onclick=greenf
+        document.getElementById('blue').onclick=bluef
+        document.getElementById('orig').onclick=origf
+    </script>
+</body>
+</html>
